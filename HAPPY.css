@@ -7,9 +7,9 @@ body {
     padding: 20px;
     overflow-x: hidden; /* Prevents horizontal scroll */
     overflow-y: auto;   /* Enables vertical scroll */
-    height: 100vh;      /* Full height for body */
+    min-height: 100vh;
     display: flex;
-    justify-content: center;  /* Centers content horizontally */
+    justify-content: flex-start;
     align-items: center;      /* Centers content vertically */
     flex-direction: column;
   }
@@ -24,7 +24,7 @@ body {
   
   /* Heading */
   h1 {
-    margin-top: 150px;
+    margin-top: clamp(40px, 10vw, 120px);
     color: #e63946;
     font-size: 2em; /* Responsive font size */
     margin-bottom: 0.5em;
@@ -75,7 +75,8 @@ body {
     margin-top: 20px;
     width: 100%;  /* Full width on small screens */
     max-width: 500px; /* Max width for larger screens */
-    height: 500px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     position: relative;
     margin: auto;  /* Centers the grid */
   }
@@ -173,6 +174,12 @@ body {
   
   /* Media queries for responsive design */
   @media (max-width: 768px) {
+  .background-video {
+    object-fit: cover;
+    opacity: 0.7;
+   }
+  }
+  @media (max-width: 768px) {
     h1 {
       font-size: 1.5em;
     }
@@ -218,4 +225,5 @@ body {
       width: 100%;  /* Full-width buttons in lightbox */
     }
   }
+
   
